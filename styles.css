@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    
+  }
+
+  body {
+    background: #feffdf;
   }
   
   #navbar {
@@ -32,6 +37,26 @@
 
   nav a:hover {
     background-color: #ffe79a;
+  }
+  
+  i { 
+    color: green;
+  }
+
+  #all-posts {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
+
+  .post {
+
+    border: 1px solid black;
+    max-width: 40%;
+    min-width: 40%;
+    margin: 1em;
+    padding: 1em;
+    background-color: white;
   }
 
   

@@ -18,7 +18,6 @@ const Main = () => {
           throw result.error;
       }
       setPosts(result.data.posts);
-      console.log(posts);
   } catch (err) {
       console.log(err);
   }
@@ -37,7 +36,9 @@ const Main = () => {
         <Route path='/posts'></Route>
         <Route path='/login'></Route>
       </Routes>
-      <ListPosts posts={posts}/>
+      <div id='all-posts'>
+        <ListPosts posts={posts}/>
+      </div>
     </BrowserRouter>
     </>
   )

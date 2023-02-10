@@ -5,7 +5,16 @@ const ListPosts = (props) => {
     return (
         props.posts.map(message => {
             return(
-                <p>{message.location}</p>
+                <div className="post">
+                    <h2>{message.title}</h2>
+                    <p>{message.description}</p>
+                    <p>Price: {message.price}</p>
+                    <p>Seller: {message.author.username}</p>
+                    <p>Location: {message.location}</p>
+                    {
+                        message.willDeliver ? <p><i class="fa-solid fa-check"></i>Will Deliver</p> : null
+                    }
+                </div>
             )
         })
     )
