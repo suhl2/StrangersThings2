@@ -58,5 +58,21 @@
     padding: 1em;
     background-color: white;
   }
+#register-form {
+  display: flex;
+  flex-flow: column;
+  margin-top: 2em;
+  max-width: 10%;
+  justify-content: center;
+  margin: auto;
+  margin-top: 10px;
+}
 
-  
+#register-form button {
+  margin-top: 10px;
+}
+
+#register-form input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

@@ -3,6 +3,7 @@ import {createRoot} from 'react-dom/client';
 import NavBar from './navbar';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import ListPosts from './listposts';
+import Register from './register';
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -32,13 +33,13 @@ const Main = () => {
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route path='/'></Route>
+        <Route path='/' element={      <div id='all-posts'>
+        <ListPosts posts={posts}/>
+      </div>}></Route>
         <Route path='/posts'></Route>
         <Route path='/login'></Route>
+        <Route path='/register' element={<Register />}></Route>
       </Routes>
-      <div id='all-posts'>
-        <ListPosts posts={posts}/>
-      </div>
     </BrowserRouter>
     </>
   )
