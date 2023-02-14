@@ -12,7 +12,7 @@ const ListPosts = (props) => {
                     <p>Seller: {message.author.username}</p>
                     <p>Location: {message.location}</p>
                     {
-                        message.willDeliver ? <p><i class="fa-solid fa-check"></i>Will Deliver</p> : null
+                        message.willDeliver ? <p><i className="fa-solid fa-check"></i>Will Deliver</p> : null
                     }
                 </div>
             )

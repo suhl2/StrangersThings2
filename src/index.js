@@ -3,6 +3,7 @@ import {createRoot} from 'react-dom/client';
 import NavBar from './navbar';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import ListPosts from './listposts';
+import RegisterForm from './registerForm';
 import Register from './register';
 
 const rootElement = document.getElementById("root");
@@ -11,9 +12,10 @@ const APIURL = 'https://strangers-things.herokuapp.com/api/2211-FTB-ET-WEB-AM/'
 
 const Main = () => {
   const [posts, setPosts] = useState([]);
+  const [token, setToken] = useState("");
   const GetPosts = async () => {
     try {
-      const response = await fetch(`${APIURL}/posts`)
+      const response = await fetch(`${APIURL}posts`)
       const result = await response.json();
       if (result.error) {
           throw result.error;
@@ -38,7 +40,7 @@ const Main = () => {
       </div>}></Route>
         <Route path='/posts'></Route>
         <Route path='/login'></Route>
-        <Route path='/register' element={<Register />}></Route>
+        <Route path='/register' element={<RegisterForm />}></Route>
       </Routes>
     </BrowserRouter>
     </>

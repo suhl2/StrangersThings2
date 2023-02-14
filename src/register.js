@@ -1,22 +1,10 @@
-import React from "react";
 
-const Register = () => {
+import React, {useState} from 'react';
+
+const Register = (props) => {
     return (
-        <div id="register-form">
-            <form>
-                <label>Username
-                <input type="text"/>
-                </label>
-                <label>Password
-                    <input type="text"/>
-                </label>
-                <label>Confirm Password
-                    <input type="text"/>
-                </label>
-            </form>
-            <button>Register</button>
-        </div>
+        <h1>You have registered</h1>
     )
-}
+};
 
 export default Register;
