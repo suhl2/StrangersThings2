@@ -4,7 +4,7 @@ import NavBar from './navbar';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import ListPosts from './listposts';
 import RegisterForm from './registerForm';
-import Register from './register';
+import Login from './login';
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -40,7 +40,7 @@ const Main = () => {
         <ListPosts posts={posts}/>
       </div>}></Route>
         <Route path='/posts'></Route>
-        <Route path='/login'></Route>
+        <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<RegisterForm />}></Route>
       </Routes>
     </BrowserRouter>
