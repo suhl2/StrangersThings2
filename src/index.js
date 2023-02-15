@@ -12,7 +12,8 @@ const APIURL = 'https://strangers-things.herokuapp.com/api/2211-FTB-ET-WEB-AM/'
 
 const Main = () => {
   const [posts, setPosts] = useState([]);
-  const [token, setToken] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(window.localStorage.getItem("strangers-things-login"));
+
   const GetPosts = async () => {
     try {
       const response = await fetch(`${APIURL}posts`)
@@ -33,7 +34,7 @@ const Main = () => {
   return (
     <>
     <BrowserRouter>
-      <NavBar />
+      <NavBar isLoggedIn={isLoggedIn}/>
       <Routes>
         <Route path='/' element={      <div id='all-posts'>
         <ListPosts posts={posts}/>

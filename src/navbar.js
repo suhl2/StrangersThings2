@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = (props) => {
     return (
         <>
         <div id="navbar">
@@ -10,7 +10,9 @@ const NavBar = () => {
                 <Link to="/">Home</Link>
                 <Link to="/posts">Posts</Link>
                 <Link to="/login">Login</Link>
-                <Link to="/register">Register</Link>
+                {
+                    props.isLoggedIn ? null : <Link to="/register">Register</Link>
+                }   
             </nav>
         </div>
         </>

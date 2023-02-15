@@ -26,8 +26,12 @@ const RegisterForm = () => {
                 }
             )
             const result = await response.json();
-            setMessage(result.data.token);
-            // setMessage("Passwords match!")
+            window.localStorage.setItem("strangers-things-login", result.data.token);
+            if(window.localStorage.getItem("strangers-things-login")){
+                setMessage("You have successfully registered!");
+            } else {
+                setMessage("Something went wrong.");
+            }
         } else {
             setMessage("Passwords don't match. Try again.")
         }
