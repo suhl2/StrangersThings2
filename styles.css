@@ -86,7 +86,6 @@
   margin: 5px;
 }
 
-/* #description {
-  width: 50%;
-  height: 100px;
-} */
+.new-post button {
+  max-width: 50px;
+}
