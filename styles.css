@@ -76,3 +76,17 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.new-post {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-post input {
+  margin: 5px;
+}
+
+/* #description {
+  width: 50%;
+  height: 100px;
+} */
