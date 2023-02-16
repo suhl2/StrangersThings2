@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logout from "./logout";
 
 const NavBar = (props) => {
     return (
@@ -13,7 +14,7 @@ const NavBar = (props) => {
                     props.isLoggedIn ? null : <Link to="/login">Login</Link>
                 }
                 {          
-                    props.isLoggedIn ? <Link to="/logout">Logout</Link> : null
+                    props.isLoggedIn ? <Link to="/" onClick={Logout}>Logout</Link> : null
                 }   
             </nav>
         </div>

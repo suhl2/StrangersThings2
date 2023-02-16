@@ -43,6 +43,7 @@ const Main = () => {
         <Route path='/posts' element={<Logout />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<RegisterForm />}></Route>
+        <Route path='/logout' element={<Logout />}></Route>
       </Routes>
     </BrowserRouter>
     </>

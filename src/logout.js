@@ -1,9 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Logout = () => {
-    return (
-        <h1>Log Out</h1>
-    )
+    window.localStorage.removeItem("strangers-things-login");
+    useNavigate("/");
 }
 
 export default Logout
