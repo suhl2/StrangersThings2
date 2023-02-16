@@ -15,6 +15,7 @@ const APIURL = 'https://strangers-things.herokuapp.com/api/2211-FTB-ET-WEB-AM/'
 const Main = () => {
   const [posts, setPosts] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(window.localStorage.getItem("strangers-things-login"));
+  const [token, setToken] = useState(window.localStorage.getItem("strangers-things-login"));
 
   const GetPosts = async () => {
     try {
@@ -45,7 +46,7 @@ const Main = () => {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<RegisterForm />}></Route>
         <Route path='/logout' element={<Logout />}></Route>
-        <Route path='/newpost' element={<NewPost />}></Route>
+        <Route path='/newpost' element={<NewPost token={token}/>}></Route>
       </Routes>
     </BrowserRouter>
     </>

@@ -1,15 +1,40 @@
 import React, {useState} from "react";
 
 
-const NewPost = () => {
+const NewPost = (props) => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
     const [location, setLocation] = useState("");
     const [deliver, setDeliver] = useState(false);
+    const createPost = async () => {
+        try {
+            const response = await fetch('https://strangers-things.herokuapp.com/api/2211-FTB-ET-WEB-AM/posts', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${props.token}`
+                },
+                body: JSON.stringify({
+                    post: {
+                        title: title,
+                        description: description,
+                        price: price,
+                        location: location,
+                        willDeliver: deliver
+                    }
+                })
+            })
+            const result = await response.json;
+            console.log(result);
+    } catch (error) {
+        console.log(error);
+    }   
+    } 
     const handleClick = (event) => {
         event.preventDefault();
-        console.log(deliver);
+        createPost();
+        
     }
     return (
         <div>
