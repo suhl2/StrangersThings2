@@ -1,10 +1,11 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
+    const navigate = useNavigate();
 
     const handleLogin = async (event) => {
         event.preventDefault();
@@ -27,6 +28,9 @@ const Login = () => {
             if(result.success) {
                 window.localStorage.setItem("strangers-things-login", result.data.token);
                 setMessage("Login Successful");
+                navigate("/");
+                window.location.reload(false);
+
             } else {
                 setMessage("Login Failed");
             }

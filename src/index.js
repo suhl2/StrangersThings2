@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import ListPosts from './listposts';
 import RegisterForm from './registerForm';
 import Login from './login';
+import Logout from './logout';
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -36,10 +37,10 @@ const Main = () => {
     <BrowserRouter>
       <NavBar isLoggedIn={isLoggedIn}/>
       <Routes>
-        <Route path='/' element={      <div id='all-posts'>
+        <Route path='/' element={<div id='all-posts'>
         <ListPosts posts={posts}/>
       </div>}></Route>
-        <Route path='/posts'></Route>
+        <Route path='/posts' element={<Logout />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<RegisterForm />}></Route>
       </Routes>
