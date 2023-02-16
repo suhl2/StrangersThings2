@@ -9,7 +9,7 @@ const NavBar = (props) => {
             <h1>Stranger's Things</h1>
             <nav>
                 <Link to="/">Home</Link>
-                <Link to="/posts">Posts</Link>
+                <Link to="/newpost">New Post</Link>
                 {
                     props.isLoggedIn ? null : <Link to="/login">Login</Link>
                 }

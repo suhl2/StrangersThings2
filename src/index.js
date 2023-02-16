@@ -6,6 +6,7 @@ import ListPosts from './listposts';
 import RegisterForm from './registerForm';
 import Login from './login';
 import Logout from './logout';
+import NewPost from './newpost';
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -44,6 +45,7 @@ const Main = () => {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<RegisterForm />}></Route>
         <Route path='/logout' element={<Logout />}></Route>
+        <Route path='/newpost' element={<NewPost />}></Route>
       </Routes>
     </BrowserRouter>
     </>
