@@ -1,10 +1,15 @@
 import React from "react";
 import deletePosts from "./deletePosts";
+import { Navigate, useNavigate } from "react-router-dom";
+
+
 
 const ListPosts = (props) => {
+    const navigate = useNavigate();
     return (
         props.posts.map(message => {
-            let className = "post"
+            let className = "post";
+            props.setPostID(message._id);
             if(message.isAuthor) {
                 className = "my-post"
             }
@@ -19,7 +24,8 @@ const ListPosts = (props) => {
                         message.willDeliver ? <p><i className="fa-solid fa-check"></i>Will Deliver</p> : null
                     }
                     {
-                        message.isAuthor ? <button onClick={ () => deletePosts(message._id, props.token)}>Delete</button> : null
+                        message.isAuthor ? <button onClick={ () => deletePosts(message._id, props.token)}>Delete</button> : props.isLoggedIn ?
+                        <button onClick={() => {props.setPostID(message._id); navigate("/message")}}>Send Message</button> : null
                     }
                 </div>
             )
