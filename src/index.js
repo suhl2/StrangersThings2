@@ -44,8 +44,6 @@ const Main = () => {
     } catch (err) {
         console.log(err);
     }
-
-    console.log(posts);
   }
 
   useEffect( () => {
@@ -58,7 +56,7 @@ const Main = () => {
       <NavBar isLoggedIn={isLoggedIn}/>
       <Routes>
         <Route path='/' element={<div id='all-posts'>
-        <ListPosts posts={posts}/>
+        <ListPosts posts={posts} token={token}/>
       </div>}></Route>
         <Route path='/posts' element={<Logout />}></Route>
         <Route path='/login' element={<Login />}></Route>

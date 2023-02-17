@@ -1,5 +1,5 @@
 import React from "react";
-
+import deletePosts from "./deletePosts";
 
 const ListPosts = (props) => {
     return (
@@ -19,7 +19,7 @@ const ListPosts = (props) => {
                         message.willDeliver ? <p><i className="fa-solid fa-check"></i>Will Deliver</p> : null
                     }
                     {
-                        message.isAuthor ? <button>Delete</button> : null
+                        message.isAuthor ? <button onClick={ () => deletePosts(message._id, props.token)}>Delete</button> : null
                     }
                 </div>
             )
