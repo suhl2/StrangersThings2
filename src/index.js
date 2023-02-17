@@ -30,8 +30,26 @@ const Main = () => {
   }
   }
 
+  const GetPostsAuthenticated = async () => {
+    try {
+      const response = await fetch(`${APIURL}posts`, {headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    }})
+      const result = await response.json();
+      if(result.error) {
+        throw result.error;
+      }
+      setPosts(result.data.posts);
+    } catch (err) {
+        console.log(err);
+    }
+
+    console.log(posts);
+  }
+
   useEffect( () => {
-    GetPosts();
+    GetPostsAuthenticated();
   })
 
   return (
