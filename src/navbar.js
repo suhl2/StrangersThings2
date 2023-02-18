@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logout from "./logout";
+import Search from "./search";
 
 const NavBar = (props) => {
     return (
         <>
         <div id="navbar">
             <h1>Stranger's Things</h1>
+            <Search setSearchTerm={props.setSearchTerm} />
             <nav>
                 <Link to="/">Home</Link>
                 {

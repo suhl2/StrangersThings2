@@ -18,6 +18,7 @@ const Main = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(window.localStorage.getItem("strangers-things-login"));
   const [token, setToken] = useState(window.localStorage.getItem("strangers-things-login"));
   const [postID, setPostID] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const GetPosts = async () => {
     try {
@@ -55,7 +56,8 @@ const Main = () => {
   return (
     <>
     <BrowserRouter>
-      <NavBar isLoggedIn={isLoggedIn}/>
+      <NavBar isLoggedIn={isLoggedIn} setSearchTerm={setSearchTerm}/>
+      <p>{searchTerm}</p>
       <Routes>
         <Route path='/' element={<div id='all-posts'>
         <ListPosts posts={posts} token={token} isLoggedIn={isLoggedIn} setPostID={setPostID}/>
