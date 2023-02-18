@@ -9,7 +9,6 @@ import Logout from './logout';
 import NewPost from './newpost';
 import SendMessage from './sendmessage';
 import Profile from './profile';
-
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 const APIURL = 'https://strangers-things.herokuapp.com/api/2211-FTB-ET-WEB-AM/'
@@ -67,7 +66,7 @@ const Main = () => {
         <Route path='/logout' element={<Logout />}></Route>
         <Route path='/newpost' element={<NewPost token={token}/>}></Route>
         <Route path='/message' element={<SendMessage postID={postID} token={token} posts={posts} />}></Route>
-        <Route path='/profile' element={<Profile />}></Route>
+        <Route path='/profile' element={<Profile token={token} posts={posts}/>}></Route>
       </Routes>
     </BrowserRouter>
     </>
