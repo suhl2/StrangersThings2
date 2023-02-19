@@ -9,6 +9,8 @@ import Logout from './logout';
 import NewPost from './newpost';
 import SendMessage from './sendmessage';
 import Profile from './profile';
+import ListPostsFiltered from './listpostsfiltered';
+
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 const APIURL = 'https://strangers-things.herokuapp.com/api/2211-FTB-ET-WEB-AM/'
@@ -19,6 +21,7 @@ const Main = () => {
   const [token, setToken] = useState(window.localStorage.getItem("strangers-things-login"));
   const [postID, setPostID] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [newPosts, setNewPosts] = useState([]);
 
   const GetPosts = async () => {
     try {
@@ -56,11 +59,11 @@ const Main = () => {
   return (
     <>
     <BrowserRouter>
-      <NavBar isLoggedIn={isLoggedIn} setSearchTerm={setSearchTerm}/>
+      <NavBar isLoggedIn={isLoggedIn} setSearchTerm={setSearchTerm} posts={posts} searchTerm={searchTerm} setNewPosts={setNewPosts}/>
       <p>{searchTerm}</p>
       <Routes>
         <Route path='/' element={<div id='all-posts'>
-        <ListPosts posts={posts} token={token} isLoggedIn={isLoggedIn} setPostID={setPostID}/>
+        <ListPosts posts={posts} token={token} isLoggedIn={isLoggedIn} setPostID={setPostID} newPosts={newPosts} searchTerm={searchTerm}/>
       </div>}></Route>
         <Route path='/posts' element={<Logout />}></Route>
         <Route path='/login' element={<Login />}></Route>

@@ -8,7 +8,7 @@ const NavBar = (props) => {
         <>
         <div id="navbar">
             <h1>Stranger's Things</h1>
-            <Search setSearchTerm={props.setSearchTerm} />
+            <Search setSearchTerm={props.setSearchTerm} posts={props.posts} searchTerm={props.searchTerm} setNewPosts={props.setNewPosts} />
             <nav>
                 <Link to="/">Home</Link>
                 {
