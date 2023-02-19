@@ -60,7 +60,6 @@ const Main = () => {
     <>
     <BrowserRouter>
       <NavBar isLoggedIn={isLoggedIn} setSearchTerm={setSearchTerm} posts={posts} searchTerm={searchTerm} setNewPosts={setNewPosts}/>
-      <p>{searchTerm}</p>
       <Routes>
         <Route path='/' element={<div id='all-posts'>
         <ListPosts posts={posts} token={token} isLoggedIn={isLoggedIn} setPostID={setPostID} newPosts={newPosts} searchTerm={searchTerm}/>
