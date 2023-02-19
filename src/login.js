@@ -48,9 +48,6 @@ const Login = () => {
                 <label>Password <input type="text" onChange={event => setPassword(event.target.value)}/></label>
                 <button onClick={handleLogin}>Log In</button>
                 <Link to="/register">Register</Link>
-                <p>{userName}</p>
-                <p>{password}</p>
-                <p>{message}</p>
             </form>
         </div>
     )

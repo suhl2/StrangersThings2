@@ -50,10 +50,6 @@ const RegisterForm = () => {
                 </label>
             </form>
             <button onClick={handleRegister}>Register</button>
-            <p>{userName}</p>
-            <p>{password}</p>
-            <p>{confirmPassword}</p>
-            <p>{message}</p>
         </div>
     )
 }
